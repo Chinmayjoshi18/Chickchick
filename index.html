@@ -133,21 +133,7 @@
             box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
         }
 
-        .balance-card::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(46, 139, 87, 0.08), transparent);
-            animation: shimmer 4s infinite;
-        }
-
-        @keyframes shimmer {
-            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
-            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
-        }
+        /* Shimmer animation removed - no flowing effects */
 
         .balance-amount {
             font-size: 4em;
@@ -300,29 +286,12 @@
             overflow: hidden;
         }
 
-        .collect-button::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            animation: collectShimmer 2s infinite;
-        }
+        /* Collect shimmer animation removed - no flowing effects */
 
-        @keyframes collectShimmer {
-            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
-            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
-        }
-
-        @keyframes collectPulse {
-            0%, 100% { transform: scale(1); box-shadow: 0 12px 40px rgba(255, 107, 107, 0.5), inset 0 2px 8px rgba(255, 255, 255, 0.3); }
-            50% { transform: scale(1.03); box-shadow: 0 15px 50px rgba(255, 107, 107, 0.7), inset 0 3px 10px rgba(255, 255, 255, 0.4); }
-        }
-
+        /* Pulsing animation removed - no movement effects */
         .collect-button.has-eggs {
-            animation: collectPulse 1.5s infinite ease-in-out;
+            /* Static highlight when eggs are ready - no animation */
+            border-color: rgba(255, 255, 255, 0.6);
         }
 
         .collect-button:hover {
