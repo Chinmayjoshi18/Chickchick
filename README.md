@@ -1,135 +1,115 @@
 # 🐔 Chicken Empire Tycoon 🥚
 
-A fun and engaging web-based incremental business tycoon game where you build a chicken farming empire!
+A fun and engaging web-based incremental business tycoon game where you build a chicken farming empire with production chains, cook management, and strategic resource planning!
+
+## 🚀 **Live Demo**
+
+**Play the game now**: [https://chinmayjoshi18.github.io/Chickchick](https://chinmayjoshi18.github.io/Chickchick)
+
+## ✨ **Latest Features (v2.0)**
+
+### 🍳 **Production Kitchen System**
+- **4 Recipes**: Scrambled Eggs (5s), Omelet (15s), Egg Sandwich (30s), Birthday Cake (1min)
+- **6-8x Higher Profits**: Turn eggs into valuable products instead of selling raw
+- **Multiple Production Slots**: Hire cooks for simultaneous productions
+- **Kitchen Upgrades**: Reduce production times by 20% per upgrade
+
+### 👨‍🍳 **Cook Management System**
+- **Hire Cooks**: Each cook adds +1 production slot ($200, $500, $1,250...)
+- **Hourly Salaries**: $10/hour per cook (real-time deduction)
+- **Strategic Investment**: High cost but enables massive production scaling
+
+### 🌾 **Feed Inventory System**
+- **Global Feed Management**: Buy feed in bulk, all chickens consume from inventory
+- **2x Consumption Rate**: 2 units/min per chicken, 3 units/min per golden chicken
+- **3-Minute Grace Period**: Chickens survive briefly when feed runs out
+- **Bulk Purchase Options**: Small (100 units/$25), Large (500/$125), Mega (1000/$250)
+
+### 🛒 **Categorized Shop**
+- **6 Categories**: Livestock, Upgrades, Staff, Automation, Feed Supply, Tools
+- **Smooth Scrolling**: Custom themed scrollbar for unlimited items
+- **Better Organization**: Find items quickly by logical grouping
 
 ## How to Play
 
-1. **Open the Game**: Simply open `index.html` in any modern web browser
-2. **Start Small**: Begin with 3 chickens and $10
-3. **Collect Eggs**: Click the collect button to gather eggs and earn money
-4. **Expand**: Use your earnings to buy more chickens and upgrades
-5. **Automate**: Purchase upgrades to increase efficiency and automation
+1. **🎮 Start Game**: Click "Start Game" to begin your chicken empire
+2. **🥚 Collect Eggs**: Chickens lay eggs every 6 seconds - click collect!
+3. **💰 Strategic Choice**: 
+   - **Quick Cash**: Sell eggs directly ($1 each, $5 for golden)
+   - **Higher Profits**: Use Production Kitchen (6-8x value!)
+4. **🍳 Production Chain**: Collect → Cook → Sell for maximum profits
+5. **👨‍🍳 Scale Up**: Hire cooks for multiple simultaneous productions
+6. **🌾 Resource Management**: Keep feed inventory stocked to prevent starvation
 
 ## Game Features
 
-### 🐔 Basic Gameplay
-- **Chickens**: Each chicken lays 1 egg every 6 seconds (only when not starving!)
-- **Egg Collection**: Collect eggs manually to earn $2 per egg
-- **Feeding**: Chickens lose 2 hunger per minute and need regular feeding to survive
-- **Growth**: Buy more chickens to increase production
+### 🐔 **Core Mechanics**
+- **Egg Generation**: 1 egg every 6 seconds per productive chicken
+- **Feed Consumption**: 2 units/minute (regular), 3 units/minute (golden)
+- **Production Chain**: Raw eggs → Cooking → High-value products
+- **Real-time Economy**: Cook salaries paid every hour
 
-### 🍽️ **NEW: Hunger System**
-- **Hunger Decay**: All chickens lose hunger over time (2 points per minute)
-- **Starvation**: Chickens with 0 hunger stop laying eggs and show as skulls 💀
-- **Critical Warning**: Flashing warning when chickens reach dangerously low hunger
-- **Visual Health Bars**: Each chicken shows a color-coded hunger bar
-  - 🟢 Green (60-100%): Healthy and productive
-  - 🟡 Yellow (30-60%): Getting hungry
-  - 🔴 Red (0-30%): Starving and unproductive
+### 🍳 **Production System**
+- **Scrambled Eggs**: 1 egg → $6 (5 seconds)
+- **Omelet**: 3 eggs → $25 (15 seconds)  
+- **Egg Sandwich**: 2 eggs → $15 (30 seconds)
+- **Birthday Cake**: 4 eggs + 1 golden → $75 (1 minute)
 
-### 🏠 Upgrades Available
-- **Better Coop**: +20% egg production rate
-- **Premium Feed**: +50% egg production rate  
-- **Auto-Collector**: Advanced automation system with timeout and running costs
-- **Golden Chickens**: Special chickens that lay golden eggs worth $10 each!
+### 🏠 **Upgrades & Automation**
+- **Better Coop**: +20% egg production per upgrade
+- **Kitchen Upgrades**: -20% production time per upgrade
+- **Auto-Collector**: Automatically collects eggs ($0.1/sec running cost)
+- **Auto-Feeder**: Automatically feeds chickens ($0.15/sec running cost)
 
-### 🌾 **Feeding Options**
-- **Basic Feed ($1 per chicken)**: Restores 50 hunger points
-- **Premium Feed ($3 per chicken)**: Restores 100 hunger points (full health!)
-- **Auto-Feeder ($400)**: Automated feeding system with timeout and running costs ($0.15/sec)
+### 📊 **Game Stats & Time**
+- **6-Column Stats**: Balance, Eggs, Inventory, Chickens, Golden Chickens, Cooks, Feed
+- **Game Time**: 60x speed (1 real minute = 1 game hour)
+- **Production Tracking**: Real-time progress bars and completion notifications
 
-### 💸 **NEW: Comprehensive Expense System**
-**Automatic Business Expenses (Every 10 seconds - Fast cash flow pressure!):**
-- **🏠 Rent**: $0.4 per chicken (facility costs scale with farm size)
-- **⚡ Utilities**: Base $1.2 + $0.15 per chicken (electricity, water, heating)
-- **👷 Staff Wages**: $1.5 per automation system (maintenance staff)
-- **🛡️ Insurance**: 0.8% of total farm value (liability and equipment coverage)
-- **🔧 Equipment Maintenance**: 1.2% of upgrade costs (repairs and upkeep)
-- **🗑️ Feed Waste**: 3% of chicken count (spillage and spoilage)
-- **📋 Regulatory Fees**: $0.6 per 10 chickens (government compliance)
-- **📢 Marketing**: 0.8% of revenue (advertising to sell eggs)
-
-**Automation Running Costs:**
-- **🤖 Auto-Collector**: $0.10/second when active (5min max, $30 to start)
-- **🌾 Auto-Feeder**: $0.15/second when active (10min max, $90 to start)
-
-### 💀 **NEW: Bankruptcy & Failure System**
-**Progressive Consequences When Money Runs Out:**
-- **-$20**: Automation systems shut down (unpaid bills)
-- **-$50**: Start losing chickens to bankruptcy
-- **-$100**: Golden chickens get repossessed
-- **-$150**: Equipment and upgrades downgraded/repossessed
-- **-$200**: Complete game over → Emergency restart with loan
-
-### 🏆 Achievements
-- **First Egg**: Collect your first egg
-- **Growing Flock**: Own 10 chickens  
-- **Golden Touch**: Buy your first golden chicken
-- **Caring Farmer**: Feed your chickens for the first time
-- **Feeding Master**: Use the auto-feeder
-- **Well-Fed Flock**: Keep all chickens above 80% hunger
-- **Egg-cellent**: Collect 100 eggs total
-- **Egg Millionaire**: Earn $1000
-- **Automation Master**: Use the auto-collector
-- **Golden Empire**: Own 5 golden chickens
-- **Profit Master**: Achieve $50/min net profit
-- **Cost Controller**: Pay $1000 total in expenses
-- **Phoenix Rising**: Survive bankruptcy and recover
-- **Full Automation**: Run both auto-systems simultaneously
-
-### 💾 Game Progress
-- Your progress is automatically saved to localStorage
-- Game continues to generate eggs even when you're away (with auto-collector)
-- Responsive design works on desktop and mobile devices
+### 🎯 **Strategic Depth**
+- **Resource Planning**: Balance feed costs vs. chicken expansion
+- **Cook Investment**: High salary costs but exponential production capacity
+- **Time vs Money**: Immediate sales vs. patient production profits
+- **Automation ROI**: Running costs vs. convenience benefits
 
 ## Game Strategy Tips
 
-### 💰 **Financial Management (CRITICAL!)**
-1. **Watch Cash Flow**: Monitor net profit/min and costs/min - negative profit leads to bankruptcy!
-2. **Expense Control**: Every chicken adds ~$2.40/min in expenses (rent, utilities, insurance)
-3. **Start Conservative**: Don't expand faster than your revenue can support
-4. **Emergency Fund**: Always keep reserve money for feeding and emergencies
-5. **Automation Costs**: Auto-systems are expensive to run - use strategically
+### 💰 **Financial Strategy**
+1. **Production Focus**: Always use Production Kitchen - 6-8x higher profits!
+2. **Cook Investment**: Hire cooks early - production capacity is everything
+3. **Feed Management**: Monitor consumption rates and buy in bulk
+4. **Salary Planning**: Each cook costs $10/hour - ensure positive cash flow
 
-### 🐔 **Operations Strategy**
-1. **Early Game**: Start with 3-5 chickens, focus on sustainable growth
-2. **Feeding Balance**: Basic feed for maintenance, premium for emergencies
-3. **Hunger Management**: Starving chickens = zero income but same expenses
-4. **Upgrade Timing**: Coop/feed upgrades boost efficiency but increase maintenance costs
-5. **Golden Chickens**: High income but very expensive to maintain
+### 🍳 **Production Optimization** 
+1. **Recipe Selection**: Omelet (15s/$25) has best profit/time ratio
+2. **Multiple Cooks**: Run several recipes simultaneously for max income
+3. **Kitchen Upgrades**: Stack with multiple cooks for incredible efficiency
+4. **Ingredient Planning**: Keep egg inventory stocked for continuous production
 
-### 🤖 **Automation Strategy**
-1. **Auto-Collector**: $30 for 5min runtime - only profitable with high egg production
-2. **Auto-Feeder**: $90 for 10min runtime - expensive but prevents starvation
-3. **Running Costs**: $0.10-0.15/sec adds up fast - monitor usage carefully
-4. **Staff Wages**: $3/automation system even when not running
-
-### 💀 **Bankruptcy Survival**
-1. **Early Warning**: Red flashing profit = immediate danger
-2. **Emergency Measures**: Sell chickens before you can't feed them
-3. **Debt Levels**: -$20 shuts automation, -$50 kills chickens, -$200 game over
-4. **Recovery**: Focus on basic chickens and manual collection until profitable
-
-### 🏆 **Advanced Tips**
-- **Real-Time Costs**: Check "Costs/Min" and expense breakdown for immediate cash flow impact
-- **10-Second Billing**: Expenses hit every 10 seconds - much more frequent pressure!
-- **Profit Margins**: Aim for positive green profit before expanding
-- **Full Automation**: Requires massive income to support both systems
-- **Golden Strategy**: 1 golden chicken = ~5 regular chickens in revenue but much higher costs
+### 🌾 **Resource Management**
+1. **Feed Buffer**: Always maintain 2-3 hours of feed inventory
+2. **Bulk Purchasing**: Mega packs (1000 units) offer best value
+3. **Expansion Timing**: Add chickens only when feed supply is secure
+4. **Grace Period**: 3-minute emergency window when feed runs out
 
 ## Technical Details
 
 - **Built with**: Pure HTML, CSS, and JavaScript
 - **No Dependencies**: Runs entirely in the browser
 - **Local Storage**: Game state persists between sessions
-- **Responsive**: Works on desktop and mobile devices
+- **Responsive Design**: Adapts to desktop and mobile devices
+- **Real-time Updates**: 10 FPS game loop with delta time calculations
 
 ## Getting Started
 
+### Option 1: Play Online
+Visit: **[https://chinmayjoshi18.github.io/Chickchick](https://chinmayjoshi18.github.io/Chickchick)**
+
+### Option 2: Local Setup
 1. Download or clone this repository
 2. Open `index.html` in any modern web browser
 3. Start building your chicken empire!
 
 ---
 
-**Have fun building your poultry empire! 🐔🏆**
+**🐔 Build your chicken empire with strategic production management! 🏆**
