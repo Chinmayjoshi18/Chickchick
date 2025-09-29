@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>Chicken Empire Tycoon</title>
     <style>
         * {
@@ -14,14 +14,15 @@
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            height: 100vh;
+            min-height: 100vh;
             color: #333;
-            overflow: hidden;
+            overflow-x: hidden;
+            overflow-y: auto;
         }
 
         .game-container {
             width: 100vw;
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             padding: 10px;
@@ -623,40 +624,342 @@
         }
 
         /* Responsive */
-        @media (max-width: 1200px) {
-            .game-main { grid-template-columns: 1fr; }
+        /* ============================================
+           🎨 COMPREHENSIVE RESPONSIVE DESIGN SYSTEM
+           ============================================ */
+
+        /* Ultra-Wide Screens (2560px+) */
+        @media (min-width: 2560px) {
+            .game-main { 
+                grid-template-columns: 1fr 420px; 
+                gap: 20px; 
+                max-width: 2800px; 
+                margin: 0 auto;
+            }
+            .balance-card { width: 400px; height: 140px; }
+            .balance-amount { font-size: 4.5em; }
+            .collect-button { width: 220px; height: 220px; font-size: 1.6em; }
+            .shop-container { height: calc(100vh - 200px); }
         }
 
+        /* Large Desktops (1440px-2560px) */
+        @media (min-width: 1440px) and (max-width: 2559px) {
+            .game-main { grid-template-columns: 1fr 400px; gap: 16px; }
+            .balance-card { width: 380px; height: 135px; }
+            .balance-amount { font-size: 4.2em; }
+            .collect-button { width: 210px; height: 210px; font-size: 1.5em; }
+        }
+
+        /* Standard Desktops (1024px-1440px) - Default styles already optimized */
+        
+        /* Tablets Landscape & Small Desktops (768px-1024px) */
+        @media (max-width: 1024px) {
+            .game-main { 
+                grid-template-columns: 1fr; 
+                gap: 12px;
+            }
+            .shop-container { 
+                height: 400px;
+                overflow-y: auto;
+                border-radius: 10px;
+                border: 2px solid rgba(255,255,255,0.2);
+            }
+            .left-section { max-height: calc(100vh - 500px); }
+        }
+
+        /* Tablets Portrait (600px-768px) */
         @media (max-width: 768px) {
-            .game-header { flex-direction: column; gap: 8px; }
+            .game-header { 
+                flex-direction: column; 
+                gap: 8px; 
+                padding: 10px 15px;
+            }
+            .game-container { padding: 8px; }
+            
+            .balance-row { margin-bottom: 8px; }
+            .balance-card { 
+                width: 300px;
+                height: 120px;
+                padding: 20px 25px;
+            }
+            .balance-amount { font-size: 3.2em; }
+            .balance-label { font-size: 1em; }
+            
+            .core-stats { 
+                grid-template-columns: repeat(3, 1fr); 
+                gap: 8px;
+            }
+            .stat-card { 
+                padding: 12px; 
+                font-size: 0.9em;
+            }
+            
+            .collect-button { 
+                width: 170px; 
+                height: 170px; 
+                font-size: 1.3em;
+                margin: 10px 0;
+            }
+            
+            .shop-container { 
+                height: 350px;
+                max-height: 40vh;
+            }
+            .category-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        /* Mobile Landscape (480px-600px) */
+        @media (max-width: 600px) {
+            body { font-size: 14px; }
+            .game-container { padding: 6px; }
+            
             .balance-card { 
                 width: 280px;
                 height: 110px;
-                padding: 20px 30px;
+                padding: 18px 22px;
             }
-            .balance-amount { font-size: 3em; color: #1B5E20; }
-            .balance-label { font-size: 1em; letter-spacing: 2px; color: #2E7D32; }
-            .core-stats { grid-template-columns: repeat(3, 1fr); }
+            .balance-amount { font-size: 2.8em; }
+            .balance-label { font-size: 0.95em; }
+            
+            .core-stats { gap: 6px; }
+            .stat-card { padding: 10px; font-size: 0.85em; }
+            
             .collect-button { 
-                width: 160px; 
-                height: 160px; 
+                width: 150px; 
+                height: 150px; 
                 font-size: 1.2em;
             }
+            
+            .shop-container { height: 300px; }
+            .shop-item { padding: 8px; }
             .category-grid { grid-template-columns: 1fr; }
         }
 
+        /* Mobile Portrait (320px-480px) */
         @media (max-width: 480px) {
+            body { font-size: 13px; }
+            .game-container { padding: 5px; }
+            
+            .game-header { padding: 8px 12px; }
+            .time-info h2 { font-size: 1.1em; }
+            .time-info p { font-size: 0.75em; }
+            
+            .balance-card { 
+                width: 260px;
+                height: 100px;
+                padding: 15px 20px;
+            }
+            .balance-amount { font-size: 2.4em; }
+            .balance-label { font-size: 0.9em; letter-spacing: 1px; }
+            
+            .core-stats { 
+                grid-template-columns: repeat(2, 1fr); 
+                gap: 5px;
+            }
+            .stat-card { 
+                padding: 8px; 
+                font-size: 0.8em;
+                min-height: 60px;
+            }
+            
+            .collect-button { 
+                width: 130px; 
+                height: 130px; 
+                font-size: 1.1em;
+            }
+            
+            .shop-container { 
+                height: 280px;
+                max-height: 35vh;
+            }
+            .shop-item { 
+                padding: 6px; 
+                font-size: 0.85em;
+            }
+            
+            .recipe-item, .production-item {
+                padding: 8px;
+                font-size: 0.85em;
+            }
+        }
+
+        /* Ultra-Small Screens (under 320px) */
+        @media (max-width: 320px) {
+            body { font-size: 12px; }
+            .game-container { padding: 4px; }
+            
             .balance-card { 
                 width: 240px;
                 height: 90px;
-                padding: 15px 25px;
+                padding: 12px 16px;
             }
-            .balance-amount { font-size: 2.2em; color: #1B5E20; }
-            .balance-label { font-size: 0.9em; letter-spacing: 1px; color: #2E7D32; }
+            .balance-amount { font-size: 2em; }
+            .balance-label { font-size: 0.8em; }
+            
             .collect-button { 
-                width: 140px; 
-                height: 140px; 
-                font-size: 1.1em;
+                width: 110px; 
+                height: 110px; 
+                font-size: 1em;
+            }
+            
+            .shop-container { height: 250px; }
+        }
+
+        /* ============================================
+           📱 ORIENTATION-SPECIFIC OPTIMIZATIONS
+           ============================================ */
+
+        /* Landscape Mode on Mobile */
+        @media (max-height: 500px) and (orientation: landscape) {
+            .game-container { 
+                overflow-y: auto;
+                padding: 4px;
+            }
+            .balance-card { 
+                width: 200px; 
+                height: 80px; 
+                padding: 10px 15px;
+            }
+            .balance-amount { font-size: 2em; }
+            .collect-button { 
+                width: 100px; 
+                height: 100px; 
+                font-size: 0.9em;
+            }
+            .core-stats { 
+                grid-template-columns: repeat(6, 1fr);
+                gap: 4px;
+            }
+            .stat-card { 
+                padding: 6px; 
+                font-size: 0.75em;
+                min-height: 50px;
+            }
+            .shop-container { 
+                height: 200px;
+                max-height: 30vh;
+            }
+        }
+
+        /* ============================================
+           🎯 TOUCH-FRIENDLY OPTIMIZATIONS
+           ============================================ */
+
+        @media (max-width: 768px) {
+            /* Larger touch targets */
+            .shop-item, .recipe-item, .control-btn {
+                min-height: 44px;
+                touch-action: manipulation;
+            }
+            
+            /* Enhanced button spacing */
+            .header-controls { gap: 12px; }
+            .sales-section { gap: 10px; }
+            
+            /* Improved scrolling on mobile */
+            .shop-container {
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: thin;
+            }
+            
+            .shop-container::-webkit-scrollbar {
+                width: 6px;
+            }
+            
+            .shop-container::-webkit-scrollbar-track {
+                background: rgba(255,255,255,0.1);
+                border-radius: 3px;
+            }
+            
+            .shop-container::-webkit-scrollbar-thumb {
+                background: rgba(255,255,255,0.3);
+                border-radius: 3px;
+            }
+        }
+
+        /* ============================================
+           💎 HIGH-DPI DISPLAY OPTIMIZATIONS
+           ============================================ */
+
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+            .balance-card, .stat-card, .collect-button {
+                border: 1px solid rgba(255,255,255,0.2);
+            }
+        }
+
+        /* ============================================
+           🛠️ UTILITY CLASSES & SCROLL ENHANCEMENTS
+           ============================================ */
+
+        /* Smooth scrolling for all containers */
+        * {
+            scroll-behavior: smooth;
+        }
+
+        /* Enhanced scrollable container */
+        .scrollable {
+            overflow-y: auto;
+            scrollbar-width: thin;
+            scrollbar-color: rgba(255,255,255,0.3) transparent;
+        }
+
+        .scrollable::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .scrollable::-webkit-scrollbar-track {
+            background: rgba(255,255,255,0.1);
+            border-radius: 4px;
+        }
+
+        .scrollable::-webkit-scrollbar-thumb {
+            background: rgba(255,255,255,0.3);
+            border-radius: 4px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .scrollable::-webkit-scrollbar-thumb:hover {
+            background: rgba(255,255,255,0.5);
+        }
+
+        /* Safe area support for devices with notches */
+        @supports (padding: max(0px)) {
+            .game-container {
+                padding-left: max(10px, env(safe-area-inset-left));
+                padding-right: max(10px, env(safe-area-inset-right));
+                padding-top: max(10px, env(safe-area-inset-top));
+                padding-bottom: max(10px, env(safe-area-inset-bottom));
+            }
+        }
+
+        /* Prevent text selection on touch devices for better UX */
+        @media (max-width: 768px) {
+            .balance-card, .stat-card, .collect-button, .shop-item {
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+                -webkit-tap-highlight-color: transparent;
+            }
+        }
+
+        /* Enhanced focus states for accessibility */
+        @media (min-width: 769px) {
+            .shop-item:focus, .control-btn:focus, .collect-button:focus {
+                outline: 2px solid #32CD32;
+                outline-offset: 2px;
+            }
+        }
+
+        /* Dark mode media query support */
+        @media (prefers-color-scheme: dark) {
+            .balance-card, .stat-card {
+                background: rgba(0, 0, 0, 0.7);
+                border: 1px solid rgba(255,255,255,0.2);
+            }
+            
+            .shop-container {
+                background: rgba(0, 0, 0, 0.6);
             }
         }
     </style>
@@ -781,7 +1084,7 @@
             <!-- Shop -->
             <div class="shop-section">
                 <h2 class="shop-title">🛒 Shop</h2>
-                <div class="shop-container">
+                <div class="shop-container scrollable">
                     
                     <!-- Livestock Category -->
                     <div class="shop-category">
